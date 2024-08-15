@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+				<h1>Last.fm Music Comparison Tool</h1>
+				<h2>Compare your favorite music with that of your friends!</h2>
       </header>
+			<main className="App-main">
+				<form className="lastfmUserInfo">
+					<label for="lastfmUserName">
+						What is your last.fm username?
+					</label>
+					<input type="text" name="lastfmUserName" id="lastfmUserName" required placeholder="superexciting"/>
+				</form>
+			</main>	
     </div>
   );
 }
