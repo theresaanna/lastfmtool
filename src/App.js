@@ -59,8 +59,10 @@ function App() {
 							)}/>
 							<button type="submit">Submit</button>
 						</form>
-						{lastfmUsername && <FavesList lastfmUsername={lastfmUsername} />}
-						{lastfmUsername && <FriendsList lastfmUsername={lastfmUsername} />}
+						<div className="columns">
+							{lastfmUsername && <FavesList lastfmUsername={lastfmUsername} />}
+							{lastfmUsername && <FriendsList lastfmUsername={lastfmUsername} />}
+						</div>
 					</main>	
 				</div>
 			</QueryClientProvider>
