@@ -15,7 +15,7 @@ export default function FavesList(lastfmUsername) {
 	if (isError) {
 		return <span>Error: {error.message}</span>;
 	}
-
+	
 	return (
 		<div className="faves">
 			<ul className="favesList">

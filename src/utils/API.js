@@ -15,7 +15,7 @@ export async function getFaves(context) {
 	const favesData = await API(
 		{
 			'method': 'user.gettopartists',
-			'user': context.queryKey[1].lastfmUsername.lastfmUsername
+			'user': context.queryKey[1].lastfmUsername.lastfmUsername || context.queryKey[1].lastfmUsername
 		}
 	);
 	return favesData;
