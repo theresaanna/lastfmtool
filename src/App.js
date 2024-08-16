@@ -1,9 +1,10 @@
 import { useState, StrictMode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { useForm, FieldApi } from '@tanstack/react-form';
+import { useForm } from '@tanstack/react-form';
 
 import './App.css';
 import FriendsList from './components/friendsList.jsx';
+import FavesList from './components/favesList.jsx';
 
 const queryClient = new QueryClient();
 
@@ -15,7 +16,7 @@ function App() {
 			'lastfmUsername': ''
 		},
 		onSubmit: async (values) => {
-			// todo error handling
+			// todo handle bad values
 			setLastfmUsername(values.value);
 			return values.value;
 		}
@@ -58,10 +59,8 @@ function App() {
 							)}/>
 							<button type="submit">Submit</button>
 						</form>
-						<div className="myFaves">
-
-						</div>
-						<FriendsList lastfmUsername={lastfmUsername} />
+						{lastfmUsername && <FavesList lastfmUsername={lastfmUsername} />}
+						{lastfmUsername && <FriendsList lastfmUsername={lastfmUsername} />}
 					</main>	
 				</div>
 			</QueryClientProvider>

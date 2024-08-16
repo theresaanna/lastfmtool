@@ -11,6 +11,16 @@ export async function getFriends(context) {
 	return friendsData;
 }
 
+export async function getFaves(context) {
+	const favesData = await API(
+		{
+			'method': 'user.gettopartists',
+			'user': context.queryKey[1].lastfmUsername.lastfmUsername
+		}
+	);
+	return favesData;
+}
+
 async function API(paramsObj, apiLocation=lastfmAPI) {
 	// dev solution. we don't want to expose api key 
 	// in the browser in production
